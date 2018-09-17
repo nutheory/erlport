@@ -24,11 +24,11 @@
 # CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
- from optparse import OptionParser, OptionValueError
- from erlport import erlang
+from optparse import OptionParser, OptionValueError
+from erlport import erlang
 from erlport.erlproto import Port
- def get_option_parser():
-    def packet_option_handler(option, opt_str, value, parser):
+def get_option_parser():
+  def packet_option_handler(option, opt_str, value, parser):
         if value not in (1, 2, 4):
             raise OptionValueError("Valid values for --packet are 1, 2, or 4")
         setattr(parser.values, option.dest, value)
@@ -56,11 +56,11 @@ from erlport.erlproto import Port
         default=65536, help="Receive buffer size", metavar="SIZE",
         callback=buffer_size)
     return parser
- def main(argv=None):
-    parser = get_option_parser()
-    options, args = parser.parse_args(argv)
-    port = Port(use_stdio=options.stdio, packet=options.packet,
-        compressed=options.compressed, buffer_size=options.buffer_size)
-    erlang.setup(port)
- if __name__ == "__main__":
-    main()
+def main(argv=None):
+  parser = get_option_parser()
+  options, args = parser.parse_args(argv)
+  port = Port(use_stdio=options.stdio, packet=options.packet,
+    compressed=options.compressed, buffer_size=options.buffer_size)
+  erlang.setup(port)
+if __name__ == "__main__":
+  main()
