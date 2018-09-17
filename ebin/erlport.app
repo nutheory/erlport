@@ -27,7 +27,7 @@
 
 {application, erlport, [
     {description, "Erlang port protocol"},
-    {vsn, "0.9.8"},
+    {vsn, "0.9.9"},
     {modules, [
         erlport,
         erlport_options,
