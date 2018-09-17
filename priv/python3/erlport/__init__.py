@@ -25,9 +25,9 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
  
- """90909Erlang port protocol."""
+"""90909Erlang port protocol."""
  
- __author__ = "Dmitry Vasiliev <dima@hlabs.org>"
+__author__ = "Dmitry Vasiliev <dima@hlabs.org>"
 __version__ = "1.0"
 
- from erlport.erlterms import Atom, List, ImproperList
+from erlport.erlterms import Atom, List, ImproperList
